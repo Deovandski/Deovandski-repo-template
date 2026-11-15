@@ -76,7 +76,7 @@ footer p { margin: 4px 0; max-width: 52rem; }
 .site-settings .done { margin-top: 18px; display: flex; justify-content: flex-end; }
 .site-settings .done button { font: 700 15px var(--sans); padding: 9px 20px; border-radius: 10px; border: 0; background: var(--ink); color: var(--paper); cursor: pointer; }
 
-/* ---------- Translations (tools/i18n.mjs) ---------- */
+/* ---------- Translations (tools/i18n.ts) ---------- */
 .i18n-banner { background: var(--paper-2); color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 10px; text-align: center; font-size: calc(13.5px * var(--scale)); line-height: 1.45; padding: 7px 14px; margin: 0 0 18px; }
 .i18n-banner a { color: var(--ink); font-weight: 700; margin-inline-start: 6px; white-space: nowrap; }
 /* system fonts for scripts the default fonts don't cover well (no big font downloads) */
@@ -97,3 +97,15 @@ html[lang^="zh"] body, html[lang="ja"] body, html[lang="ko"] body, html[lang="th
   .top-end { gap: 12px; }
   .gear { width: 32px; height: 32px; }
 }
+
+/* ---------- Inner pages (notes, articles) ---------- */
+.page { padding-top: 24px; }
+.page h1 { font-size: calc(40px * var(--scale)); line-height: 1.1; margin: 0 0 18px; }
+.prose { max-width: 44rem; }
+.prose p, .prose li { color: var(--ink); }
+.crumbs { margin: 0 0 8px; font-size: calc(14px * var(--scale)); color: var(--ink-soft); }
+.cards { list-style: none; padding: 0; display: grid; gap: 12px; max-width: 44rem; }
+.cards li { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; border: 1px solid var(--rule); border-radius: 12px; padding: 14px 18px; }
+.cards a { display: grid; gap: 2px; text-decoration: none; }
+.cards a span { color: var(--ink-soft); font-size: calc(15px * var(--scale)); }
+.cards time { color: var(--ink-soft); font-size: calc(14px * var(--scale)); white-space: nowrap; }

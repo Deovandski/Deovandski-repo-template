@@ -1,7 +1,7 @@
 ## What changed
 
 ## Checked
-- [ ] `npm ci && node tools/i18n.mjs build` works and the pages look right
+- [ ] `npm run check` and `npm run build` pass, and the pages look right in `npm run preview` (desktop and phone width)
 - [ ] English changed? Translations can follow in a later batch (CI reports the gap); see "Translations" in CLAUDE.md
 
 ## AI assistance

@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { REPO_URL, url } from '../lib/site';
+---
+<Base title="Project name" description="One or two sentences about the project, for search engines and link previews.">
+  <div class="hero">
+    <span class="badge">A short label</span>
+    <h1><span translate="no">Project name</span>
+      <span class="sub">What it is, in one line</span>
+    </h1>
+    <p class="lead">A paragraph that tells a visitor what this is and why it exists.</p>
+    <div class="actions">
+      <a class="btn" href={REPO_URL}>Source on GitHub</a>
+      <a class="btn ghost" href={url('notes/')}>Read the notes</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">Replace this with the project's own content. Every heading, paragraph, list item, button and alt text becomes a translation segment; mark anything that must stay as it is with <code>translate="no"</code>.</p>
+    <p><button class="btn small" id="demo" type="button">Press me</button> <span id="demo-out" aria-live="polite"></span></p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy</h2>
+    <p class="lede">This website has no cookies, no analytics and no ads. It's hosted on GitHub Pages, so <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> sees your IP address when it sends you the page. Questions go to <a href={`${REPO_URL}/issues`}>GitHub issues</a>.</p>
+    <p class="lede">Your Language and Text size choices are saved in this browser only, so the site remembers them next time. They never leave your device.</p>
+  </section>
+
+  <Fragment slot="ui-strings">
+    <span data-k="demo-done">Pressed. This sentence came from the page, so it is translated too.</span>
+  </Fragment>
+</Base>
+
+<script>
+  // Example of script text from #ui-strings. Delete it with the demo button.
+  import { t } from '../scripts/i18n.ts';
+  const out = document.querySelector('#demo-out');
+  document.querySelector('#demo')?.addEventListener('click', () => { if (out) out.textContent = t('demo-done'); });
+</script>

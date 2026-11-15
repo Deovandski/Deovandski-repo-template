@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   site:
-    name: Site builds
+    name: Site checks and builds
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,8 +20,10 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
+      - name: Type check (TypeScript, .astro files, content schemas)
+        run: npm run check
       - name: Build the site in every language
-        run: node tools/i18n.mjs build --out _site
+        run: npm run build
 
   translations:
     name: Translations (reports only, never blocks)
@@ -35,7 +37,8 @@ jobs:
       - name: How much of the site is translated
         run: |
           npm ci
-          node tools/i18n.mjs status | tee -a "$GITHUB_STEP_SUMMARY"
+          npx astro build
+          node tools/i18n.ts status | tee -a "$GITHUB_STEP_SUMMARY"
 
   placeholders:
     name: Template placeholders (reports only)

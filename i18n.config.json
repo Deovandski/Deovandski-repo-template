@@ -1,6 +1,0 @@
-{
-  "_about": "Settings for tools/i18n.mjs. base_url is the published site (no trailing slash); languages is the order of the Language menu. A language is built only if content/i18n/<code>/ exists.",
-  "base_url": "https://deovandski.github.io/REPO-NAME",
-  "source": "site",
-  "languages": ["zh", "ja", "pt", "es", "ar", "ko", "ms", "th", "de", "vi", "it", "fr", "hi", "id"]
-}

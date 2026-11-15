@@ -15,9 +15,17 @@
   "en": "About",
   "t": "概要"
  },
+ "70440046a3dc": {
+  "en": "Notes",
+  "t": "ノート"
+ },
  "89b86ab0e66f": {
   "en": "Language",
   "t": "言語"
+ },
+ "a2c46c859bf4": {
+  "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
+  "t": "作者のオリジナルをもとに AI の支援で作られています：<a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI に関する開示</a>。<a href=\"/REPO-NAME/#privacy\">プライバシー</a>。"
  },
  "c7f73bb54d92": {
   "en": "Settings",
@@ -34,9 +42,5 @@
  "e9b450d14bc2": {
   "en": "Done",
   "t": "完了"
- },
- "ef17efa339bc": {
-  "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"#privacy\">Privacy</a>.",
-  "t": "作者のオリジナルをもとに AI の支援で作られています：<a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI に関する開示</a>。<a href=\"#privacy\">プライバシー</a>。"
  }
 }

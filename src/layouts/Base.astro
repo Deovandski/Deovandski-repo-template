@@ -1,0 +1,79 @@
+---
+// Every page uses this layout: head, header with the gear, footer, the Settings dialog and #ui-strings.
+// Pages pass a title and description; script-written text goes in the "ui-strings" slot (see CLAUDE.md).
+import '../styles/site.css';
+import Gear from '../components/Gear.astro';
+import SettingsDialog from '../components/SettingsDialog.astro';
+import { BASE, NAV, REPO_URL, url } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Shown in the browser tab after the title; leave out on the home page. */
+  section?: string;
+}
+const { title, description, section } = Astro.props;
+const fullTitle = section ? `${title} · ${section}` : title;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang="en" data-base={BASE}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <link rel="icon" href={url('icon.svg')} type="image/svg+xml">
+  <link rel="canonical" href={canonical}>
+  <script is:inline>
+    // Before first paint: text size, and on a first visit the browser's language (once it's 90% translated).
+    // The storage key matches src/scripts/settings.ts.
+    try {
+      var d = document.documentElement, s = JSON.parse(localStorage.getItem("REPO-NAME-site") || "{}");
+      if (s.size) d.style.setProperty("--scale", s.size / 17);
+      if (!d.dataset.lang) {
+        var ok = (d.dataset.langs || "").split(" "), w = s.lang, n = navigator.languages || [navigator.language || ""];
+        for (var i = 0; i < n.length && !w; i++) { var c = String(n[i]).toLowerCase().split("-")[0]; if (c === "en" || ok.indexOf(c) >= 0) w = c; }
+        var b = d.dataset.base || "";
+        if (w && w !== "en" && ok.indexOf(w) >= 0) location.replace(b + "/" + w + location.pathname.slice(b.length) + location.search + location.hash);
+      }
+    } catch (e) { /* private mode: no saved settings */ }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href={url()} translate="no">Project name</a>
+      <div class="top-end">
+        <nav aria-label="Main">
+          {NAV.map((n) => <a href={n.href}>{n.label}</a>)}
+          <a href={REPO_URL} translate="no">GitHub</a>
+        </nav>
+        <Gear />
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer>
+      <p>Made by <a href="https://github.com/Deovandski">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Code under the <a href={`${REPO_URL}/blob/main/LICENSE`}>MIT license</a>.</p>
+      <p>Built with AI assistance from the author's originals: <a href={`${REPO_URL}/blob/main/AI-DISCLOSURE.md`}>AI disclosure</a>. <a href={url('#privacy')}>Privacy</a>.</p>
+    </footer>
+  </div>
+
+  <!-- Text the scripts write, kept in the page so it is translated with it. Read it with t("key") from src/scripts/i18n.ts. -->
+  <div id="ui-strings" hidden>
+    <slot name="ui-strings" />
+  </div>
+
+  <SettingsDialog />
+  <script>
+    import '../scripts/settings.ts';
+  </script>
+</body>
+</html>

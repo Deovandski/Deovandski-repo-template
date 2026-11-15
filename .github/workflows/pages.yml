@@ -1,11 +1,10 @@
 name: Website
 
-# Builds the site (site/ plus a translated copy per language from content/i18n/) and deploys it to GitHub Pages.
+# Builds the site (Astro, then a translated copy per language from content/i18n/) and deploys it to GitHub Pages.
 # One-time setup: repo Settings > Pages > Build and deployment > Source = "GitHub Actions".
 on:
   push:
     branches: [main]
-    paths: ["site/**", "content/i18n/**", "tools/i18n.mjs", "i18n.config.json", "package.json", "package-lock.json", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -34,7 +33,7 @@ jobs:
       - name: Build the site in every language
         run: |
           npm ci
-          node tools/i18n.mjs build --out _site
+          npm run build
 
       - uses: actions/configure-pages@v5
 
