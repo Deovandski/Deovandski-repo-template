@@ -82,3 +82,5 @@ src/ (English, Astro + TypeScript)  ──astro build──▶  dist/  ──too
 - Node's type stripping goes away, and the tools would need a compile step.
 
 If any of these happen, write the new options down the same way, pros and cons, and decide together again.
+
+-Deo & Claude Code
