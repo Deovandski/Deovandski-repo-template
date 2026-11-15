@@ -22,11 +22,11 @@ Modeled on the questions in IBM's [AI Attribution Toolkit](https://www.research.
 
 | Path | Where it comes from | What the AI did |
 |---|---|---|
-| [site/](site) | _(the author's content and design choices)_ | Designed and coded the page, the Settings menu (Language, Text size) and the styles. The site's own interface text is AI-written. |
-| [tools/i18n.mjs](tools/i18n.mjs) | A Node port of [HusbandOutWorld's](https://github.com/Deovandski/HusbandOutWorld) `tools/i18n.py`. | Written by the AI. |
+| [src/](src) | _(the author's content and design choices)_ | Designed and coded the layout, components, pages, the Settings menu (Language, Text size) and the styles. The site's own interface text is AI-written. |
+| [tools/](tools) | `i18n.ts` is a TypeScript port of [HusbandOutWorld's](https://github.com/Deovandski/HusbandOutWorld) `tools/i18n.py`. | Written by the AI. |
 | [content/i18n](content/i18n) | The website's English. | **Translated by the AI**, segment by segment. Name spellings in each `glossary.json` follow the author's rule (by sound, never translated) and match HusbandOutWorld's. |
 | [.github/](.github) | The workflows of Deovandski's other repositories. | Written by the AI. |
-| [README.md](README.md), [CLAUDE.md](CLAUDE.md), [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), this page | Patterns from Deovandski's other repositories. | Written by the AI, from [Deovandski-repo-template](https://github.com/Deovandski/Deovandski-repo-template). |
+| [README.md](README.md), [CLAUDE.md](CLAUDE.md), [docs/](docs), [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), this page | Patterns from Deovandski's other repositories. | Written by the AI, from [Deovandski-repo-template](https://github.com/Deovandski/Deovandski-repo-template). |
 
 ## Contributing
 PRs are welcome, with or without AI help. If you used AI for a contribution, say so in the PR description and add a line to the table above.

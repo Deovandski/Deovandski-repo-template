@@ -15,9 +15,17 @@
   "en": "About",
   "t": "소개"
  },
+ "70440046a3dc": {
+  "en": "Notes",
+  "t": "노트"
+ },
  "89b86ab0e66f": {
   "en": "Language",
   "t": "언어"
+ },
+ "a2c46c859bf4": {
+  "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
+  "t": "작가의 원작을 바탕으로 AI의 도움을 받아 만들었습니다: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI 공개</a>. <a href=\"/REPO-NAME/#privacy\">개인정보</a>."
  },
  "c7f73bb54d92": {
   "en": "Settings",
@@ -34,9 +42,5 @@
  "e9b450d14bc2": {
   "en": "Done",
   "t": "완료"
- },
- "ef17efa339bc": {
-  "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"#privacy\">Privacy</a>.",
-  "t": "작가의 원작을 바탕으로 AI의 도움을 받아 만들었습니다: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI 공개</a>. <a href=\"#privacy\">개인정보</a>."
  }
 }

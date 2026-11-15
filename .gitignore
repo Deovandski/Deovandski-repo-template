@@ -1,5 +1,7 @@
-# Website build (node tools/i18n.mjs build) and its tooling
+# Website builds (astro build -> dist/, tools/i18n.ts build -> _site/) and tooling
+dist/
 _site/
+.astro/
 node_modules/
 work*.json
 

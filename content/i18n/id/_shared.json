@@ -15,9 +15,17 @@
   "en": "About",
   "t": "Tentang"
  },
+ "70440046a3dc": {
+  "en": "Notes",
+  "t": "Catatan"
+ },
  "89b86ab0e66f": {
   "en": "Language",
   "t": "Bahasa"
+ },
+ "a2c46c859bf4": {
+  "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
+  "t": "Dibuat dengan bantuan AI dari karya asli penulis: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">pengungkapan AI</a>. <a href=\"/REPO-NAME/#privacy\">Privasi</a>."
  },
  "c7f73bb54d92": {
   "en": "Settings",
@@ -34,9 +42,5 @@
  "e9b450d14bc2": {
   "en": "Done",
   "t": "Selesai"
- },
- "ef17efa339bc": {
-  "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"#privacy\">Privacy</a>.",
-  "t": "Dibuat dengan bantuan AI dari karya asli penulis: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">pengungkapan AI</a>. <a href=\"#privacy\">Privasi</a>."
  }
 }
