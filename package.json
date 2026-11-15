@@ -1,0 +1,15 @@
+{
+  "name": "deovandski-repo-template-site",
+  "private": true,
+  "description": "Website tooling: the translation build (tools/i18n.mjs).",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node tools/i18n.mjs build --out _site",
+    "i18n:status": "node tools/i18n.mjs status",
+    "test": "node tools/i18n.mjs build --out _site"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.15"
+  }
+}

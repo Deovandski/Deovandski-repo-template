@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    name: Site builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Build the site in every language
+        run: node tools/i18n.mjs build --out _site
+
+  translations:
+    name: Translations (reports only, never blocks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: How much of the site is translated
+        run: |
+          npm ci
+          node tools/i18n.mjs status | tee -a "$GITHUB_STEP_SUMMARY"
+
+  placeholders:
+    name: Template placeholders (reports only)
+    if: github.repository != 'Deovandski/Deovandski-repo-template'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look for REPO-NAME left over from the template
+        shell: bash
+        run: |
+          left=$(git grep -l 'REPO-NAME' -- ':!README.md' || true)
+          if [ -n "$left" ]; then
+            echo "::warning::REPO-NAME is still in these files; see 'Starting a new repo' in README.md:"
+            echo "$left"
+          fi
+
+  secrets:
+    name: No secrets or signing keys
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: bash
+        run: |
+          bad=$(git ls-files | grep -Ei '(^|/)\.env(\.|$)|\.(pfx|cer|pem|key|p12)$' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::These files must not be committed:"
+            echo "$bad"
+            exit 1
+          fi

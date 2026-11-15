@@ -1,0 +1,21 @@
+# Website build (node tools/i18n.mjs build) and its tooling
+_site/
+node_modules/
+work*.json
+
+# OS and editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vs/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Secrets and signing keys: never commit these
+.env
+.env.*
+*.pfx
+*.cer
+*.pem
+*.key
