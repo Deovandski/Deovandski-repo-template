@@ -74,6 +74,22 @@ src/ (English, Astro + TypeScript)  ──astro build──▶  dist/  ──too
 - `site.config.json`: the one place for the address, the base path and the language order.
 - `npm run check`: types and schemas. `npm run build`: Astro, then translations. `npm run preview`: serves `_site/` the way GitHub Pages does.
 - `npm run init -- <repo-name>`: the first step in a new repo. It fills in the name everywhere and keeps the stored translations matching.
+- `tools/llms.ts` runs last, on `_site/`: `llms.txt`, `llms-full.txt`, an `index.md` Markdown copy next to every English page, `sitemap.xml`, and `robots.txt` at a domain root. It reads the finished pages, so it sees exactly what visitors see, and it runs after the translations so the sitemap only lists languages that are translated enough to be indexed (`INDEX_COVERAGE`).
+
+## Making the site readable by AI tools
+
+Background: Deovandski/Deovandski#147. An outside AI reader couldn't read the Deovandski site at all. The usual causes: some AI tools and company networks block `*.github.io`; search-based assistants only see pages Bing or Google have indexed, and new sites usually aren't; fetchers ignore `#fragments`, drop hidden content, don't run JavaScript and cut off long files. The fix there (Deovandski/Deovandski#150) is built into the template, so every repo starts with it:
+
+- **`llms.txt`** ([llmstxt.org](https://llmstxt.org/)): the site's title and summary, then one line per page with its description, linked to the page's Markdown copy. Pages in a folder (a content collection) get their own section.
+- **Markdown copies** (`<page>/index.md`): the page's `<main>` only, with no menu, footer, scripts, buttons, hidden text or `data-llms-skip` decorations.
+- **`llms-full.txt`**: every page in one file. Past about 200 KB, `llms.txt` warns that readers may cut it off.
+- **`sitemap.xml`**, and `<link rel="alternate" type="text/markdown">` in every page's head pointing to its copy and to `llms.txt`. The footer links both text files, the same as the Deovandski site.
+
+### How to test
+
+1. `npm run build`. The last line says how many pages, Markdown copies and sitemap URLs were written.
+2. `npm run preview` and open `/llms.txt`, a page's `index.md` and `/sitemap.xml`. Check that each page is listed with its description, that the copies hold the page's text and nothing from the menu or footer, and that every link is a full address.
+3. After a deploy, ask two different AI assistants (say Claude and ChatGPT) to read `https://<address>/llms.txt` and summarize the site. If one can't reach github.io at all, that is the blocking described above, not a bug in the files.
 
 ## When to revisit this
 

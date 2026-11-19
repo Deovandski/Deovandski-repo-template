@@ -15,6 +15,8 @@ interface Props {
 const { title, description, section } = Astro.props;
 const fullTitle = section ? `${title} · ${section}` : title;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// Every page at <path>/ has a Markdown copy at <path>/index.md, written by tools/llms.ts (the 404 page doesn't).
+const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro.url.pathname) ? `${Astro.url.pathname}index.md` : null;
 ---
 <!doctype html>
 <html lang="en" data-base={BASE}>
@@ -27,6 +29,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <meta property="og:description" content={description}>
   <link rel="icon" href={url('icon.svg')} type="image/svg+xml">
   <link rel="canonical" href={canonical}>
+  <!-- For AI tools and crawlers: this page as Markdown, and the index of every page (both written by tools/llms.ts). -->
+  {markdownTwin && <link rel="alternate" type="text/markdown" href={markdownTwin}>}
+  <link rel="alternate" type="text/markdown" href={url('llms.txt')}>
   <script is:inline>
     // Before first paint: text size, and on a first visit the browser's language (once it's 90% translated).
     // The storage key matches src/scripts/settings.ts.
@@ -63,6 +68,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <footer>
       <p>Made by <a href="https://github.com/Deovandski">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Code under the <a href={`${REPO_URL}/blob/main/LICENSE`}>MIT license</a>.</p>
       <p>Built with AI assistance from the author's originals: <a href={`${REPO_URL}/blob/main/AI-DISCLOSURE.md`}>AI disclosure</a>. <a href={url('#privacy')}>Privacy</a>.</p>
+      <p translate="no"><a href={url('llms.txt')}>llms.txt</a> · <a href={url('llms-full.txt')}>llms-full.txt</a></p>
     </footer>
   </div>
 
