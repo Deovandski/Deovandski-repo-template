@@ -387,6 +387,7 @@ const TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json',
   '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2',
   '.txt': 'text/plain; charset=utf-8', '.mp4': 'video/mp4', '.md': 'text/markdown; charset=utf-8', '.xml': 'application/xml',
+  '.webmanifest': 'application/manifest+json',
 };
 
 /** _site/ at the base path, like GitHub Pages: /REPO-NAME/ja/notes/ -> _site/ja/notes/index.html. */

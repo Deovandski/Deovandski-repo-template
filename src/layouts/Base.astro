@@ -28,6 +28,21 @@ const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro
   <meta property="og:title" content={fullTitle}>
   <meta property="og:description" content={description}>
   <link rel="icon" href={url('icon.svg')} type="image/svg+xml">
+  <!-- Installable app (PWA): the manifest (src/pages/manifest.webmanifest.ts), icons (public/icons/) and the worker
+       that keeps pages readable offline (public/sw.js). The worker's scope is the base path, so it covers every language. -->
+  <meta name="theme-color" content="#07090a">
+  <link rel="manifest" href={url('manifest.webmanifest')}>
+  <link rel="apple-touch-icon" href={url('icons/apple-touch-icon.png')}>
+  <script is:inline>
+    if ("serviceWorker" in navigator) addEventListener("load", function () {
+      // This page loaded before the worker existed on a first visit, so ask the worker to save it too.
+      var b = document.documentElement.dataset.base || "", first = !navigator.serviceWorker.controller;
+      navigator.serviceWorker.register(b + "/sw.js", { scope: b + "/" })
+        .then(function () { return first && navigator.serviceWorker.ready; })
+        .then(function (r) { if (r && r.active) r.active.postMessage({ type: "save-page", url: location.href }); })
+        .catch(function () { /* no worker (private mode, old browser): the site works as before */ });
+    });
+  </script>
   <link rel="canonical" href={canonical}>
   <!-- For AI tools and crawlers: this page as Markdown, and the index of every page (both written by tools/llms.ts). -->
   {markdownTwin && <link rel="alternate" type="text/markdown" href={markdownTwin}>}
