@@ -31,8 +31,17 @@ jobs:
           cache: npm
 
       - name: Build the site in every language
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           npm ci
+          # The template repo itself (or a new repo that hasn't run `npm run init` yet) still says REPO-NAME, so its
+          # CSS, links and GitHub links would point at /REPO-NAME/ and the live site would load unstyled. Fill in the
+          # real name here, in the build copy only; nothing is committed. init also re-keys the translations.
+          if grep -q '"/REPO-NAME"' site.config.json; then
+            echo "::notice::site.config.json still has the REPO-NAME placeholder; building as $REPO_NAME."
+            npm run init -- "$REPO_NAME"
+          fi
           npm run build
 
       - uses: actions/configure-pages@v5
