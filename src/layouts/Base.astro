@@ -4,6 +4,7 @@
 import '../styles/site.css';
 import Gear from '../components/Gear.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
+import PhotoViewer from '../components/reusable/PhotoViewer.astro';
 import { BASE, NAV, REPO_URL, url } from '../lib/site';
 
 interface Props {
@@ -93,6 +94,8 @@ const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro
   </div>
 
   <SettingsDialog />
+  <!-- Every picture opens bigger here ("Pictures are clickable" in CLAUDE.md). -->
+  <PhotoViewer />
   <script>
     import '../scripts/settings.ts';
   </script>

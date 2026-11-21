@@ -22,6 +22,14 @@ If a piece of UI could be useful twice, in this repo or in another of Deovandski
 - **Look before you build:** check the reusable components here and in the other repos first. The same rule is in Deovandski/Deovandski (`src/components/reusable/`: `SplitFlap`, a split-flap board, and `LedClock`, an LED countdown), Deovandski-repo-template, HusbandOutWorld, vraki-windows and Vraki-West-March-Campaign-D-D. Copy and adapt an existing component instead of starting over, and note where it came from.
 - **Extract when you touch it:** when you change one-off UI that fits this rule, pull it out into a reusable component in the same PR.
 
+## Pictures are clickable
+Every picture opens bigger when pressed, in the one photo viewer (`src/components/reusable/PhotoViewer.astro`, already in `Base.astro`). Nothing to wire up: any `<img>` with alt text opens by itself, and so does a link straight to an image file. The same standard is in Deovandski/Deovandski, HusbandOutWorld, Vraki-West-March-Campaign-D-D and sinoi-the-fisherman.
+- **Give every content picture real alt text.** The alt is the viewer's caption (and is translated). `alt=""` means decorative, and those don't open.
+- **Dates:** the viewer shows the date, in the page's language, when it knows one: `data-date="YYYY-MM-DD"` (or `data-date-label="Circa 2013"`) on the picture, or a `YYYY-MM-DD` at the start of its file name.
+- **Bigger copy:** pass `data-full` with a large `getImage()` copy when the page only ships a small size; otherwise the viewer uses the largest size in the srcset.
+- **Galleries:** give each thumbnail button `data-gallery`, `data-full` and `data-alt` (and `data-date`), and ‹ › step through that gallery.
+- **Opt out** with `data-no-zoom` on a picture or its container (game sprites, decorations). Pictures in links, buttons, the header and maps are already skipped.
+
 ## Before every PR
 1. `npm run check`: TypeScript, `.astro` files and content schemas. Fix every error; don't silence one with `any` or `@ts-ignore` unless you say why in a comment.
 2. `npm run build`: Astro builds `dist/`, then `tools/i18n.ts` writes `_site/` with every language.

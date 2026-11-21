@@ -13,6 +13,11 @@
   --radius: 18px;
   --scale: 1;
   --sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  /* The photo viewer (src/components/reusable/PhotoViewer.astro) follows the site's colours. */
+  --photo-viewer-accent: var(--accent);
+  --photo-viewer-bg: var(--paper);
+  --photo-viewer-text: var(--ink);
+  --photo-viewer-muted: var(--ink-soft);
 }
 @media (prefers-color-scheme: dark) {
   :root { --paper: #0e1214; --paper-2: #161c1f; --rule: #2a3236; --ink: #e7eded; --ink-soft: #9fabb0; }
