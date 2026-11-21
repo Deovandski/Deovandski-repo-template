@@ -50,6 +50,7 @@ src/lib/site.ts        url(), the menu, the repo link
 public/                files served as-is
 content/i18n/<lang>/   translations: meta.json, glossary.json, _shared.json, pages/
 tools/i18n.ts          translation build, status, todo, apply, prune, rehash, serve
+tools/prune-originals.ts  drops unused full-size picture copies after astro build (keeps the deploy small)
 tools/llms.ts          llms.txt, llms-full.txt, Markdown copies, sitemap.xml (runs last in the build)
 tools/init.ts          fills in the repo name in a new repo
 site.config.json       address, base path, language order
