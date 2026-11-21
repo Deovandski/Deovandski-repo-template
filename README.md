@@ -23,7 +23,7 @@ The starting point for Deovandski's repositories, small or big. It carries the p
 3. Rewrite `src/pages/index.astro` with the project's content. Keep or delete the `notes` collection (`src/content/notes/`, `src/pages/notes/`). Fill in the `_(…)_` parts of AI-DISCLOSURE.md and the top of CLAUDE.md. In LICENSE, keep only the "Not covered" items that apply.
 4. `npm run check` and `npm run build`, then translate: `npm run i18n -- status` and follow "Translations" in CLAUDE.md (or ask Claude to "translate the site").
 5. Turn on Pages: **Settings › Pages › Source = GitHub Actions**, then run the Website workflow.
-   Then submit `https://<address>/sitemap.xml` in [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters). New sites usually aren't indexed, and search-based AI assistants only see indexed pages. A project site (under `/<repo>/`) can't point to its sitemap from a `robots.txt`, so this step is the only way they find it.
+   Then get it on Google: verify the site in [Google Search Console](https://search.google.com/search-console) (put Google's `google….html` file in `public/` unchanged and **never remove it**, or use a DNS record for a custom domain), press Verify after the deploy, and submit `https://<address>/sitemap.xml` there and in [Bing Webmaster Tools](https://www.bing.com/webmasters). The steps are in [docs/GOOGLE-SEARCH-CONSOLE.md](docs/GOOGLE-SEARCH-CONSOLE.md). New sites usually aren't indexed, and search-based AI assistants only see indexed pages. A project site (under `/<repo>/`) can't point to its sitemap from a `robots.txt`, so this step is the only way they find it.
 6. Replace this README with the project's own.
 
 ## Commands
