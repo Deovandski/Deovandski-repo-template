@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import { REPO_URL, url } from '../lib/site';
+import { REPO_URL, SITE_DESCRIPTION, SITE_NAME, url } from '../lib/site';
 ---
-<Base title="Project name" description="One or two sentences about the project, for search engines and link previews.">
+<Base title={SITE_NAME} description={SITE_DESCRIPTION}>
   <div class="hero">
     <span class="badge">A short label</span>
-    <h1><span translate="no">Project name</span>
+    <h1><span translate="no">{SITE_NAME}</span>
       <span class="sub">What it is, in one line</span>
     </h1>
     <p class="lead">A paragraph that tells a visitor what this is and why it exists.</p>
