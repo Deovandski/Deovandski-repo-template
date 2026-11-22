@@ -1,9 +1,10 @@
 // The Settings menu (gear, top right): language and text size, remembered in this browser.
-// The storage key matches the inline script in src/layouts/Base.astro. Add new settings to the same object.
-const KEY = 'REPO-NAME-site';
+// The storage key is STORAGE_KEY in src/lib/site.ts, put on <html data-store> by Base.astro (its inline script reads
+// the same attribute). Add new settings to the same object.
 interface Saved { lang?: string; size?: number }
 
 const root = document.documentElement;
+const KEY = root.dataset.store ?? '';
 const BASE = root.dataset.base ?? '';
 const LANG = root.dataset.lang ?? '';  // "" on English pages, "ja", "pt", ... on translated ones
 

@@ -5,7 +5,7 @@ import '../styles/site.css';
 import Gear from '../components/Gear.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
 import PhotoViewer from '../components/reusable/PhotoViewer.astro';
-import { BASE, NAV, REPO_URL, url } from '../lib/site';
+import { BASE, NAV, REPO_URL, SITE_NAME, STORAGE_KEY, THEME_COLOR, url } from '../lib/site';
 
 interface Props {
   title: string;
@@ -20,7 +20,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro.url.pathname) ? `${Astro.url.pathname}index.md` : null;
 ---
 <!doctype html>
-<html lang="en" data-base={BASE}>
+<html lang="en" data-base={BASE} data-store={STORAGE_KEY}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +31,7 @@ const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro
   <link rel="icon" href={url('icon.svg')} type="image/svg+xml">
   <!-- Installable app (PWA): the manifest (src/pages/manifest.webmanifest.ts), icons (public/icons/) and the worker
        that keeps pages readable offline (public/sw.js). The worker's scope is the base path, so it covers every language. -->
-  <meta name="theme-color" content="#07090a">
+  <meta name="theme-color" content={THEME_COLOR}>
   <link rel="manifest" href={url('manifest.webmanifest')}>
   <link rel="apple-touch-icon" href={url('icons/apple-touch-icon.png')}>
   <script is:inline>
@@ -52,7 +52,7 @@ const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro
     // Before first paint: text size, and on a first visit the browser's language (once it's 90% translated).
     // The storage key matches src/scripts/settings.ts.
     try {
-      var d = document.documentElement, s = JSON.parse(localStorage.getItem("REPO-NAME-site") || "{}");
+      var d = document.documentElement, s = JSON.parse(localStorage.getItem(document.documentElement.dataset.store || "") || "{}");
       if (s.size) d.style.setProperty("--scale", s.size / 17);
       if (!d.dataset.lang) {
         var ok = (d.dataset.langs || "").split(" "), w = s.lang, n = navigator.languages || [navigator.language || ""];
@@ -67,7 +67,7 @@ const markdownTwin = Astro.url.pathname.endsWith('/') && !/\/404\/?$/.test(Astro
   <a class="skip" href="#main">Skip to content</a>
   <div class="wrap">
     <header class="top">
-      <a class="brand" href={url()} translate="no">Project name</a>
+      <a class="brand" href={url()} translate="no">{SITE_NAME}</a>
       <div class="top-end">
         <nav aria-label="Main">
           {NAV.map((n) => <a href={n.href}>{n.label}</a>)}

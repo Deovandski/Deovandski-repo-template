@@ -30,6 +30,12 @@ Every picture opens bigger when pressed, in the one photo viewer (`src/component
 - **Galleries:** give each thumbnail button `data-gallery`, `data-full` and `data-alt` (and `data-date`), and ‹ › step through that gallery.
 - **Opt out** with `data-no-zoom` on a picture or its container (game sprites, decorations). Pictures in links, buttons, the header and maps are already skipped.
 
+## One source
+Anything shown or used in more than one place (a widget, game, gallery, text, name, colour or setting) has one source that every place reads. Never paste a second copy.
+- **The site's own facts** (name, description, theme colour, the Settings storage key) live in `src/lib/site.ts` (`SITE_NAME`, `SITE_DESCRIPTION`, `THEME_COLOR`, `STORAGE_KEY`). Pages, `Base.astro` and the app manifest import them.
+- **UI used twice** is a reusable component (see above); **content shown twice** comes from one collection entry or data file.
+- **When a copy can't be avoided** (CSS can't import TypeScript, so `--night` repeats `THEME_COLOR`), put a comment on both saying "change both", and say why in the PR.
+
 ## Before every PR
 1. `npm run check`: TypeScript, `.astro` files and content schemas. Fix every error; don't silence one with `any` or `@ts-ignore` unless you say why in a comment.
 2. `npm run build`: Astro builds `dist/`, then `tools/i18n.ts` writes `_site/` with every language.
@@ -46,7 +52,7 @@ Every picture opens bigger when pressed, in the one photo viewer (`src/component
 | Add a style | `src/styles/site.css`. Font sizes are `calc(Npx * var(--scale))`, except header chrome (nav, gear), which stays fixed. |
 | Add a file served as-is (images, fonts, PDFs) | `public/`. Link it with `url('images/x.webp')`. |
 | Change what AI tools and search engines read | Nothing to do for a new page: `tools/llms.ts` runs last in `npm run build` and writes `llms.txt`, `llms-full.txt`, an `index.md` copy of every page (its `<main>` only), `sitemap.xml`, and `robots.txt` when `base` is `""`. Mark decorations whose text means nothing read aloud (a clock's digits, glyph copies) with `data-llms-skip`; `hidden` and `aria-hidden="true"` are left out already. Pages in a folder (a collection) get their own section in `llms.txt`. |
-| Change the installed app (PWA) | Name, colours and long-press `shortcuts`: `src/pages/manifest.webmanifest.ts` (built, so every address keeps the base path). Icons: `public/icons/` (192px, 512px, a maskable 512px with extra margin for Android's circle crop, and a 180px Apple touch icon); the template's are placeholders made from `public/icon.svg`. Offline: `public/sw.js` saves pages as they are visited, plus CSS, scripts and fonts, never images; change its `VERSION` to throw away old copies. Base.astro links the manifest and registers the worker. |
+| Change the installed app (PWA) | Name, colours and long-press `shortcuts`: `src/pages/manifest.webmanifest.ts` (built, so every address keeps the base path). Icons: `public/icons/` (192px, 512px, a maskable 512px with extra margin for Android's circle crop, and a 180px Apple touch icon); the template's are placeholders made from `public/icon.svg`. Offline: `public/sw.js` saves pages as they are visited, plus CSS, scripts and fonts, never images. **Freshness rule:** pages, and any file whose name stays the same from build to build (everything in `public/`, the manifest), are network first, fetched with `cache: 'no-cache'` (a cheap "not modified" when nothing changed), with the saved copy only offline or after 4 seconds; only Astro's hashed `_astro/` files are saved first. That way the first visit after a deploy always shows the new version. Bump `VERSION` whenever the worker's rules change, so old copies are thrown away. Base.astro links the manifest and registers the worker. |
 | Verify the site in Google Search Console | Put Google's `google….html` file in `public/` exactly as it came (same name, same one line) and **never remove it**: Search Console re-checks it, and removing it un-verifies the site. A custom domain can use a DNS record instead (no file). Then Deo presses Verify and submits `sitemap.xml`. Steps: [docs/GOOGLE-SEARCH-CONSOLE.md](docs/GOOGLE-SEARCH-CONSOLE.md). |
 | Change the site address, base path or language order | `site.config.json` (Astro, the layout and `tools/i18n.ts` all read it). |
 
