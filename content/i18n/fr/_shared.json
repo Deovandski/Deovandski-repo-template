@@ -1,4 +1,8 @@
 {
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "Tu utilises l’application installée."
+ },
  "26e57c67a024": {
   "en": "Made by <a href=\"https://github.com/Deovandski\">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Code under the <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/LICENSE\">MIT license</a>.",
   "t": "Réalisé par <a href=\"https://github.com/Deovandski\">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Code sous <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/LICENSE\">licence MIT</a>."
@@ -23,13 +27,25 @@
   "en": "Language",
   "t": "Langue"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "Pas de bouton d’installation ? Ouvre cette page dans Chrome (⋮ → Ouvrir dans Chrome), puis ⋮ → Installer l’application."
+ },
  "a2c46c859bf4": {
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "Réalisé avec l'aide de l'IA à partir des originaux de l'auteur : <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">déclaration sur l'IA</a>. <a href=\"/REPO-NAME/#privacy\">Confidentialité</a>."
  },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "Installée ! Ouvre-la depuis l’écran d’accueil ou la liste des applications."
+ },
  "c7f73bb54d92": {
   "en": "Settings",
   "t": "Paramètres"
+ },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "Pour l’installer, ouvre cette page dans Chrome, Edge ou Samsung Internet. Sur iPhone ou iPad : Partager → Sur l’écran d’accueil."
  },
  "cf01481f626d": {
   "en": "Privacy",
@@ -39,8 +55,20 @@
   "en": "Want a language added?",
   "t": "Vous voulez une autre langue ?"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "Sur iPhone ou iPad : touche Partager, puis Sur l’écran d’accueil."
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "Installer l’application"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "Terminé"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "App"
  }
 }

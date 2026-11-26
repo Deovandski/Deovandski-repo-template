@@ -1,4 +1,8 @@
 {
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "आप इंस्टॉल किया हुआ ऐप इस्तेमाल कर रहे हैं।"
+ },
  "26e57c67a024": {
   "en": "Made by <a href=\"https://github.com/Deovandski\">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Code under the <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/LICENSE\">MIT license</a>.",
   "t": "<a href=\"https://github.com/Deovandski\">Deovandski</a> द्वारा बनाया गया। © 2026 Deovandski Skibinski Junior। कोड <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/LICENSE\">MIT लाइसेंस</a> के तहत।"
@@ -23,13 +27,25 @@
   "en": "Language",
   "t": "भाषा"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "इंस्टॉल बटन नहीं दिख रहा? यह पेज Chrome में खोलें (⋮ → Chrome में खोलें), फिर ⋮ → ऐप इंस्टॉल करें।"
+ },
  "a2c46c859bf4": {
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "लेखक की मूल कृतियों से AI की मदद से बनाया गया: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI प्रकटीकरण</a>। <a href=\"/REPO-NAME/#privacy\">निजता</a>।"
  },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "इंस्टॉल हो गया! इसे होम स्क्रीन या ऐप सूची से खोलें।"
+ },
  "c7f73bb54d92": {
   "en": "Settings",
   "t": "सेटिंग्स"
+ },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "इंस्टॉल करने के लिए यह पेज Chrome, Edge या Samsung Internet में खोलें। iPhone या iPad पर: शेयर करें → होम स्क्रीन में जोड़ें।"
  },
  "cf01481f626d": {
   "en": "Privacy",
@@ -39,8 +55,20 @@
   "en": "Want a language added?",
   "t": "कोई भाषा जुड़वाना चाहते हैं?"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "iPhone या iPad पर: शेयर करें दबाएँ, फिर होम स्क्रीन में जोड़ें।"
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "ऐप इंस्टॉल करें"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "हो गया"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "ऐप"
  }
 }
