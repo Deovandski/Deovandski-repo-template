@@ -18,6 +18,10 @@
   --photo-viewer-bg: var(--paper);
   --photo-viewer-text: var(--ink);
   --photo-viewer-muted: var(--ink-soft);
+  /* So does the Install app button in Settings (src/components/reusable/InstallApp.astro). */
+  --install-accent: var(--accent);
+  --install-ink: var(--night);
+  --install-muted: var(--ink-soft);
 }
 @media (prefers-color-scheme: dark) {
   :root { --paper: #0e1214; --paper-2: #161c1f; --rule: #2a3236; --ink: #e7eded; --ink-soft: #9fabb0; }
@@ -78,6 +82,8 @@ footer p { margin: 4px 0; max-width: 52rem; }
 .site-settings select { font: inherit; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink); max-width: 60%; }
 .site-settings input[type="range"] { accent-color: var(--accent-2); width: 9rem; }
 .site-settings .setting-link { margin: 0; padding: 6px 0 12px; border-bottom: 1px solid var(--rule); font-size: 14px; text-align: end; }
+.site-settings .setting-app { align-items: flex-start; }
+.site-settings .setting-app .install-app { justify-items: end; text-align: end; max-width: 78%; }
 .site-settings .done { margin-top: 18px; display: flex; justify-content: flex-end; }
 .site-settings .done button { font: 700 15px var(--sans); padding: 9px 20px; border-radius: 10px; border: 0; background: var(--ink); color: var(--paper); cursor: pointer; }
 

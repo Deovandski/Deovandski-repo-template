@@ -1,4 +1,8 @@
 {
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "Anda sedang menggunakan apl yang dipasang."
+ },
  "26e57c67a024": {
   "en": "Made by <a href=\"https://github.com/Deovandski\">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Code under the <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/LICENSE\">MIT license</a>.",
   "t": "Dibuat oleh <a href=\"https://github.com/Deovandski\">Deovandski</a>. © 2026 Deovandski Skibinski Junior. Kod di bawah <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/LICENSE\">lesen MIT</a>."
@@ -23,13 +27,25 @@
   "en": "Language",
   "t": "Bahasa"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "Tiada butang pasang? Buka halaman ini dalam Chrome (⋮ → Buka dalam Chrome), kemudian ⋮ → Pasang apl."
+ },
  "a2c46c859bf4": {
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "Dibina dengan bantuan AI daripada karya asal pengarang: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">pendedahan AI</a>. <a href=\"/REPO-NAME/#privacy\">Privasi</a>."
  },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "Sudah dipasang! Buka dari skrin utama atau senarai apl."
+ },
  "c7f73bb54d92": {
   "en": "Settings",
   "t": "Tetapan"
+ },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "Untuk memasangnya, buka halaman ini dalam Chrome, Edge atau Samsung Internet. Pada iPhone atau iPad: Kongsi → Tambah ke Skrin Utama."
  },
  "cf01481f626d": {
   "en": "Privacy",
@@ -39,8 +55,20 @@
   "en": "Want a language added?",
   "t": "Mahu bahasa lain ditambah?"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "Pada iPhone atau iPad: ketik Kongsi, kemudian Tambah ke Skrin Utama."
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "Pasang apl"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "Selesai"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "Apl"
  }
 }
