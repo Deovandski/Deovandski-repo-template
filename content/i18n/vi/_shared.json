@@ -35,6 +35,14 @@
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "Được làm với sự hỗ trợ của AI từ bản gốc của tác giả: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">công bố về AI</a>. <a href=\"/REPO-NAME/#privacy\">Quyền riêng tư</a>."
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "Thống kê cho dân kỹ thuật"
+ },
+ "bbfa773e5a63": {
+  "en": "Close",
+  "t": "Đóng"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "Đã cài xong! Mở nó từ màn hình chính hoặc danh sách ứng dụng."
@@ -62,10 +70,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "Cài đặt ứng dụng"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "Xong"
  },
  "fc4a695f02a8": {
   "en": "App",
