@@ -35,6 +35,14 @@
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "Réalisé avec l'aide de l'IA à partir des originaux de l'auteur : <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">déclaration sur l'IA</a>. <a href=\"/REPO-NAME/#privacy\">Confidentialité</a>."
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "Statistiques pour les geeks"
+ },
+ "bbfa773e5a63": {
+  "en": "Close",
+  "t": "Fermer"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "Installée ! Ouvre-la depuis l’écran d’accueil ou la liste des applications."
@@ -62,10 +70,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "Installer l’application"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "Terminé"
  },
  "fc4a695f02a8": {
   "en": "App",

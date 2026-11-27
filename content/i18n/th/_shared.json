@@ -35,6 +35,14 @@
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "สร้างขึ้นด้วยความช่วยเหลือของ AI จากผลงานต้นฉบับของผู้เขียน: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">การเปิดเผยการใช้ AI</a> <a href=\"/REPO-NAME/#privacy\">ความเป็นส่วนตัว</a>"
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "สถิติสำหรับคนเนิร์ด"
+ },
+ "bbfa773e5a63": {
+  "en": "Close",
+  "t": "ปิด"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "ติดตั้งแล้ว! เปิดได้จากหน้าจอโฮมหรือรายการแอป"
@@ -62,10 +70,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "ติดตั้งแอป"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "เสร็จ"
  },
  "fc4a695f02a8": {
   "en": "App",

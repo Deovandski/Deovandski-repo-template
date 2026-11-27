@@ -35,6 +35,14 @@
   "en": "Built with AI assistance from the author's originals: <a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI disclosure</a>. <a href=\"/REPO-NAME/#privacy\">Privacy</a>.",
   "t": "作者のオリジナルをもとに AI の支援で作られています：<a href=\"https://github.com/Deovandski/REPO-NAME/blob/main/AI-DISCLOSURE.md\">AI に関する開示</a>。<a href=\"/REPO-NAME/#privacy\">プライバシー</a>。"
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "詳細統計情報"
+ },
+ "bbfa773e5a63": {
+  "en": "Close",
+  "t": "閉じる"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "インストールしました！ ホーム画面かアプリ一覧から開いてください。"
@@ -62,10 +70,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "アプリをインストール"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "完了"
  },
  "fc4a695f02a8": {
   "en": "App",
